@@ -1,0 +1,40 @@
+2013-05-30 22:06:53 =ERROR REPORT====
+GET /post/list [bff] 404 1ms2013-05-30 22:07:00 =ERROR REPORT====
+GET /post/create [bff] 404 4ms2013-05-30 22:07:07 =ERROR REPORT====
+GET /posts/create [bff] 404 57ms2013-05-30 22:07:19 =ERROR REPORT====
+GET /posts/list [bff] 404 78ms2013-05-30 22:08:38 =ERROR REPORT====
+{undef,[{greeting,new,[id,undefined],[]},{bff_post_controller,create,3,[{file,"/home/nick/Dev/bff/src/controller/bff_post_controller.erl"},{line,8}]},{boss_web_controller,execute_action,5,[{file,"src/boss/boss_web_controller.erl"},{line,836}]},{boss_web_controller,process_dynamic_request,5,[{file,"src/boss/boss_web_controller.erl"},{line,543}]},{boss_web_controller,process_request,5,[{file,"src/boss/boss_web_controller.erl"},{line,532}]},{timer,tc,3,[{file,"timer.erl"},{line,194}]},{boss_web_controller,build_dynamic_response,4,[{file,"src/boss/boss_web_controller.erl"},{line,462}]},{mochiweb_http,headers,5,[{file,"src/mochiweb_http.erl"},{line,94}]}]}2013-05-30 22:08:38 =ERROR REPORT====
+POST /post/create [bff] 500 68ms2013-05-30 22:09:21 =ERROR REPORT====
+{badarg,[{erlang,length,[undefined],[]},{post,'-validation_tests/1-fun-0-',1,[{file,"/home/nick/Dev/bff/src/model/post.erl"},{line,7}]},{boss_db,'-validate_record/1-lc$^0/1-0-',1,[{file,"src/boss_db.erl"},{line,308}]},{boss_db,validate_record,1,[{file,"src/boss_db.erl"},{line,308}]},{boss_db,save_record,1,[{file,"src/boss_db.erl"},{line,255}]},{bff_post_controller,create,3,[{file,"/home/nick/Dev/bff/src/controller/bff_post_controller.erl"},{line,9}]},{boss_web_controller,execute_action,5,[{file,"src/boss/boss_web_controller.erl"},{line,836}]},{boss_web_controller,process_dynamic_request,5,[{file,"src/boss/boss_web_controller.erl"},{line,543}]}]}2013-05-30 22:09:21 =ERROR REPORT====
+POST /post/create [bff] 500 58ms2013-05-30 22:15:26 =ERROR REPORT====
+** Generic server <0.89.0> terminating 
+** Last message in was {delete,undefined}
+** When Server state == {state,connected,1,undefined,[{size,5},{max_overflow,10},{adapter,mock},{cache_enable,false},{shards,[]},{is_master_node,true},{db_host,"localhost"},{db_port,1978}],boss_db_adapter_mock,undefined,undefined,[],{dict,0,16,16,8,80,48,{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]},{{[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]}}},false,60,db,0}
+** Reason for termination == 
+** {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,325}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,315}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,172}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,239}]}]}
+2013-05-30 22:15:26 =CRASH REPORT====
+  crasher:
+    initial call: boss_db_controller:init/1
+    pid: <0.89.0>
+    registered_name: []
+    exception exit: {{function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,325}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,315}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,172}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,239}]}]},[{gen_server,terminate,6,[{file,"gen_server.erl"},{line,747}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,239}]}]}
+    ancestors: [<0.87.0>,boss_db_pool,boss_db_sup,boss_web,boss_sup,<0.65.0>]
+    messages: []
+    links: [<0.87.0>,<0.86.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 27
+    reductions: 255
+  neighbours:
+2013-05-30 22:15:26 =SUPERVISOR REPORT====
+     Supervisor: {<0.87.0>,poolboy_sup}
+     Context:    child_terminated
+     Reason:     {function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,325}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,315}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,172}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,239}]}]}
+     Offender:   [{pid,<0.89.0>},{name,boss_db_controller},{mfargs,{boss_db_controller,start_link,undefined}},{restart_type,temporary},{shutdown,brutal_kill},{child_type,worker}]
+
+2013-05-30 22:15:26 =ERROR REPORT====
+{{function_clause,[{boss_db_controller,infer_type_from_id,[undefined],[{file,"src/boss_db_controller.erl"},{line,325}]},{boss_db_controller,db_for_key,2,[{file,"src/boss_db_controller.erl"},{line,315}]},{boss_db_controller,handle_call,3,[{file,"src/boss_db_controller.erl"},{line,172}]},{gen_server,handle_msg,5,[{file,"gen_server.erl"},{line,588}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,239}]}]},{gen_server,call,[<0.89.0>,{delete,undefined},30000]}}2013-05-30 22:15:26 =ERROR REPORT====
+POST /post/remove [bff] 500 58ms2013-05-30 22:21:06 =ERROR REPORT====
+GET /post/ [bff] 404 102ms
