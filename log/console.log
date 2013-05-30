@@ -1,0 +1,15 @@
+2013-05-30 21:13:07.282 [info] <0.7.0> Application lager started on node 'bff@nick-Advent'
+2013-05-30 21:13:07.299 [info] <0.67.0> Starting Boss in development mode....
+
+2013-05-30 21:13:07.339 [info] <0.88.0> Successfully connected to database: boss_db_adapter_mock
+2013-05-30 21:13:07.339 [info] <0.89.0> Successfully connected to database: boss_db_adapter_mock
+2013-05-30 21:13:07.340 [info] <0.90.0> Successfully connected to database: boss_db_adapter_mock
+2013-05-30 21:13:07.340 [info] <0.91.0> Successfully connected to database: boss_db_adapter_mock
+2013-05-30 21:13:07.340 [info] <0.92.0> Successfully connected to database: boss_db_adapter_mock
+2013-05-30 21:13:07.365 [info] <0.67.0> Starting master services on 'bff@nick-Advent'
+
+2013-05-30 21:13:07.383 [info] <0.7.0> Application tinymq started on node 'bff@nick-Advent'
+2013-05-30 21:13:07.414 [info] <0.67.0> SSL:[]
+
+2013-05-30 21:13:07.451 [info] <0.7.0> Application boss started on node 'bff@nick-Advent'
+2013-05-30 21:13:07.478 [info] <0.151.0> Loading routes from "/home/nick/Dev/bff/priv/bff.routes" ....
