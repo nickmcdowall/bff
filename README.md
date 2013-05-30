@@ -29,3 +29,4 @@ git clone git@github.com:nickmcdowall/bff.git
 <code>./init-dev.sh start</code>
 
 <h4>Start hacking!</h4>
+Try loading <em>http://localhost:8001/post/list</em>
