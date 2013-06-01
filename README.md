@@ -4,29 +4,42 @@ Created a 'Social Network' spoof for playing with ChicagoBoss and Erlang
 
 <h2>What you waiting for??</h2>
 
-<h4>Get Erlang</h4>
-
+<h4>Install Erlang</h4>
 ```
 http://www.erlang.org/download.html
 ```
 
-<h4>Get ChicagoBoss</h4>
-
-```sh
-git clone https://github.com/evanmiller/ChicagoBoss.git
+<h4>Setup ChicagoBoss</h4>
+Choose a development directory to download the applications.  From that directory run:
 ```
-<br/>
-<code>cd ChicagoBoss</code><br/>
-<code>make</code>
+git clone https://github.com/evanmiller/ChicagoBoss.git
+cd ChicagoBoss
+make
+```
+
+<h4>Setup ChicagoBoss Admin</h4>
+Download and compile the admin application into the development directory:
+```
+cd ..
+git clone https://github.com/evanmiller/cb_admin.git
+cd cb_admin
+./rebar compile
+```
 	
-<h4>Download bff</h4>
-<code>cd ..</code><br/>
-```sh
+<h4>Setup bff</h4>
+Download the bff application into the development directory
+```
+cd ..
 git clone git@github.com:nickmcdowall/bff.git
 ```
-<h4>Start her up</h4>
-<code>cd bff</code><br/>
-<code>./init-dev.sh start</code>
 
-<h4>Start hacking!</h4>
+<h4>Start up bff in dev mode</h4>
+```
+cd bff
+./init-dev.sh start
+```
+<h4>Get cracking..</h4>
+You should now be able to hit the admin page:
+<a href="http://localhost:8001/admin">http://localhost:8001/admin</a>
+
 Try loading: <a href="http://localhost:8001/post/list">http://localhost:8001/post/list<a>
