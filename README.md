@@ -1,4 +1,4 @@
-<h1>bff - (4 eva and eva)</h1>
+<h1><em>bff</em> - (4 eva and eva)</h1>
 
 Created a 'Social Network' spoof for playing with ChicagoBoss and Erlang
 
@@ -26,20 +26,20 @@ cd cb_admin
 ./rebar compile
 ```
 	
-<h4>Setup bff</h4>
+<h4>Setup <em>bff</em></h4>
 Download the bff application into the development directory
 ```
 cd ..
 git clone git@github.com:nickmcdowall/bff.git
 ```
 
-<h4>Start up bff in dev mode</h4>
+<h4>Start up <em>bff</em> in dev mode</h4>
 ```
 cd bff
 ./init-dev.sh start
 ```
 <h4>Get cracking..</h4>
-You should now be able to hit the admin page:
+You should now be able to hit the home page:
+<a href="http://localhost:8001/">http://localhost:8001/</a>
+and the admin page:
 <a href="http://localhost:8001/admin">http://localhost:8001/admin</a>
-
-Try loading: <a href="http://localhost:8001/post/list">http://localhost:8001/post/list<a>
