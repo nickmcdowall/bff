@@ -43,3 +43,6 @@ You should now be able to hit the home page:
 <a href="http://localhost:8001/">http://localhost:8001/</a>
 and the admin page:
 <a href="http://localhost:8001/admin">http://localhost:8001/admin</a>
+
+To Create a user go to '''http://localhost:8001/admin/model/create/person?'''. To generate 
+the password hash run this in the shell: ```user_lib:hash_for("name", "password").```

@@ -1,11 +1,14 @@
 -module(bff_post_controller, [Req]).
 -compile(export_all).
 
-create('GET', []) ->
+before_(_) ->
+	user_lib:require_login(Req).
+
+create('GET', [], Person) ->
 	ok;
-create('POST', []) ->
+create('POST', [], Person) ->
 	PostText = Req:post_param("post_text"),
-	NewPost = post:new(id, PostText),
+	NewPost = post:new(id, PostText, Person:id()),
 	case NewPost:save() of
 		{ok, SavedPost} -> 
 			{redirect, [{action, "list"}]};
@@ -14,10 +17,15 @@ create('POST', []) ->
 			{new_msg, NewPost}]}
 	end.
 
-list('GET', []) ->
+list('GET', [], Person) ->
 	Posts = boss_db:find(post, []),
-	{ok, [{posts, Posts}]}.
+	{ok, [{posts, Posts}, {person, Person}]}.
 
-remove('POST', []) ->
+view('GET', [PostId], Person) ->
+    Post = boss_db:find(PostId),
+    {ok, [{post, Post}]}.
+
+
+remove('POST', [], Person) ->
 	boss_db:delete(Req:post_param("post_id")),
 	{redirect, [{action, "list"}]}.

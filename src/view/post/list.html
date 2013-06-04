@@ -4,6 +4,8 @@
 </head>
 <body>
 	{% block body %}
+	<p>{{ person.name }}, here we have listed all your posts:</p>
+	
 	<ul>
 		{% if posts %} 
 			{% for post in posts %}
@@ -12,11 +14,13 @@
 		{% endif %}
 	</ul>
 	{% endblock %}
+	
+	
 	<p>
-		<a href="{% url action="create" %}">Create Post</a>
+		<a href="{% url action='create' %}">Create Post</a>
 	</p>
 
-	<form method="post" action="{% url action="remove" %}">
+	<form method="post" action="{% url action='remove' %}">
 		<select name="post_id"> 
 			{% for post in posts %}
 			<option value="{{ post.id }}">

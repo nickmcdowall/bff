@@ -1,5 +1,6 @@
--module(post, [Id, PostText]).
+-module(post, [Id, PostText, PersonId]).
 -compile(export_all).
+-belongs_to(person).
 
 % Make sure that the post is valid before saving.
 validation_tests() ->
