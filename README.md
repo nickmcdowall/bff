@@ -44,5 +44,9 @@ You should now be able to hit the home page:
 and the admin page:
 <a href="http://localhost:8001/admin">http://localhost:8001/admin</a>
 
-To Create a user go to '''http://localhost:8001/admin/model/create/person?'''. To generate 
-the password hash run this in the shell: ```user_lib:hash_for("name", "password").```
+To quickly load some dummy data run this in the console:
+```
+dummy_data:load().
+```
+
+Now try loggingg in with bob/bob as username/password
