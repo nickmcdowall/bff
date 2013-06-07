@@ -38,7 +38,7 @@ git clone git@github.com:nickmcdowall/bff.git
 cd bff
 ./init-dev.sh start
 ```
-<h4>Get cracking..</h4>
+<h4>Crank up the server..</h4>
 You should now be able to hit the home page:
 <a href="http://localhost:8001/">http://localhost:8001/</a>
 and the admin page:
@@ -50,3 +50,7 @@ dummy_data:load("bob").
 ```
 
 This will create a user called bob with password bob.
+
+<h4>Functional Tests</h4>
+To run the functional tests make sure the app is running; Open another terminal; 
+run the following command from within the bff root directory: ```./rebar boss c=test_functional```
