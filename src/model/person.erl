@@ -21,13 +21,13 @@ validation_tests() ->
 	[
 		{fun() -> length(Name) > 0 end, "Your name can't be empty, silly!"},
 		{fun() -> length(Name) =< 100 end, "Are you kidding me?!"},
-		{fun() -> not_a_duplicate(Name) end, "That name has been taken:" ++ Name},
+		{fun() -> not_a_duplicate(Name) end, Name ++ " has already been taken!"},
 		{fun() -> length(PasswordHash) > 0 end, 
 		 	"Password can't be empty.. use 'user_lib:hash_for(\"name\", \"password\").' in the console."}
 	].
 
 not_a_duplicate(Name) ->
-	case boss_db:find(person, [name, 'equals', Name], []) of
+	case boss_db:find(person, [name, 'equals', Name]) of
 		[]			-> true;
-		_Something	-> false
+		[_Person]	-> false
 	end.

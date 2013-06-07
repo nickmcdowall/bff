@@ -8,12 +8,16 @@
 %% @end
 %%--------------------------------------------------------------------
 load() ->
-	Person = person:new(id, "bob", "92e7928958ca35284f2f382c8b7eb509"),
-	case Person:save() of
-		{error,[Reason]} -> 
-			{error, Reason};
-		{ok, _} ->
-			Post = post:new(id, "What a lovely day!", Person:id()),
+	Bob = person:new(id, "bob", "92e7928958ca35284f2f382c8b7eb509"),
+	case Bob:save() of
+		{ok, SavedBob} ->
+			lager:info("Saved Bob:~p", [SavedBob]),
+			Post = post:new(id, "What a lovely day!", SavedBob:id()),
 			Post:save(),
-			ok
+			ok;
+		{error,[Reason]} -> 
+			lager:warning("Failed to save person: ~p", [Bob]),
+			{error, Reason};
+		_ ->
+			{error, unknown}
 	end.
