@@ -44,9 +44,9 @@ You should now be able to hit the home page:
 and the admin page:
 <a href="http://localhost:8001/admin">http://localhost:8001/admin</a>
 
-To quickly load some dummy data run this in the console:
+To quickly setup a dummy user run this in the console:
 ```
-dummy_data:load().
+dummy_data:load("bob").
 ```
 
-Now try loggingg in with bob/bob as username/password
+This will create a user called bob with password bob.

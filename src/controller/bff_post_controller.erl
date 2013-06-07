@@ -18,12 +18,11 @@ create('POST', [], Person) ->
 	end.
 
 list('GET', [], Person) ->
-	Posts = boss_db:find(post, []),
-	{ok, [{posts, Posts}, {person, Person}]}.
+	{ok, [{posts, Person:posts()}, {person, Person}]}.
 
 view('GET', [PostId], Person) ->
     Post = boss_db:find(PostId),
-    {ok, [{post, Post}]}.
+    {ok, [{post, Person:posts([id, "equals", PostId]) }] }.
 
 
 remove('POST', [], Person) ->
