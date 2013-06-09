@@ -1,0 +1,11 @@
+{% if error %}
+	<font color="red">{{ error }}</font>
+{% endif %}
+
+<h4>Sign Up:</h4>
+<form method="post">
+	Name:<br/><input name="name"/><br/>
+	Password:<br/><input name="password" type="password" /><br/>
+	<input type="submit" value="Sign Up" />
+	<input type="hidden" name="redirect" value="/" />
+</form>
