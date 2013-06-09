@@ -1,4 +1,4 @@
-%% @doc Utility module to load some dummy data quickly and easily.
+%% @doc Utility module to load some dummy data quickly.
 -module(dummy_data).
 -compile(export_all).
 

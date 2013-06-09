@@ -3,10 +3,21 @@
 		<title>{% block title %}BFF{% endblock %}</title>
 	</head>
 	<body>
-		Hello.. Welcome to BFF
+	<div><a href="/user/logout">Sign Out</a></div>
 		
-	<p>
-		<a href="post/create">Create Post</a>
-	</p>
+	{% block body %}
+	<h2>Welcome back {{ person.name }}</h2>
+	
+	<div>
+	<h4>Posts | <a href="post/create">New</a></h4>
+		<ul>
+			{% if person.posts %} 
+				{% for post in person.posts %}
+					<li>{{ post.post_text }} </li>
+				{% endfor %} 
+			{% endif %}
+		</ul>
+	</div>
+	{% endblock %}
 	</body>
 </html>

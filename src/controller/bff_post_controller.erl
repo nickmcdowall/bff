@@ -11,7 +11,7 @@ create('POST', [], Person) ->
 	NewPost = post:new(id, PostText, Person:id()),
 	case NewPost:save() of
 		{ok, SavedPost} -> 
-			{redirect, [{action, "list"}]};
+			{redirect, [{controller, "welcome"},{action, "index"}]};
 		{error, ErrorList} -> 
 			{ok, [{errors, ErrorList}, 
 			{new_msg, NewPost}]}
@@ -27,4 +27,4 @@ view('GET', [PostId], Person) ->
 
 remove('POST', [], Person) ->
 	boss_db:delete(Req:post_param("post_id")),
-	{redirect, [{action, "list"}]}.
+	{redirect, [{controller, "welcome"},{action, "index"}]}.

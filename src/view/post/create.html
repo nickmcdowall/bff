@@ -1,19 +1,26 @@
-{% extends "post/list.html" %} 
-{% block title %}Create a new Post{% endblock %} 
-{% block body %}
 
-	{% if errors %}
-		<ul>
-		 {% for error in errors %}
-		 	<li><font color=red>{{ error }}</font></li>
-		 {% endfor %}
-		</ul>
-	{% endif %}
-	
-	<form method="post">
-		Enter a new post:
-		<textarea name="post_text">{% if new_msg %}{{ new_msg.post_text }}{% endif %}</textarea>
-		<input type="submit">
-	</form>
-	
-{% endblock %}
+<html>
+	<head>
+		<title>{% block title %}New Post{% endblock %}</title>
+	</head>
+	<body>
+	{% block body %}
+		<h2>New post</h2>
+		{% if errors %}
+			<ul>
+			 {% for error in errors %}
+			 	<li><font color=red>{{ error }}</font></li>
+			 {% endfor %}
+			</ul>
+		{% endif %}
+		
+		<form method="post">
+			Enter message here:
+			<textarea name="post_text">{% if new_msg %}{{ new_msg.post_text }}{% endif %}</textarea>
+			<input type="submit">
+		</form>
+		
+	{% endblock %}
+	</body>
+
+</html>

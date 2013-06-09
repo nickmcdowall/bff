@@ -1,13 +1,13 @@
 {% if error %}
 	<font color="red">{{ error }}</font>
 {% endif %}
+
+<h4>Please Sign In below or <a href="/user/signup">Register</a> for an account</h4>
 <form method="post">
-Name:<br />
-<input name="name" /><br /><br />
-
-Password:<br />
-<input name="password" type="password" /><br /><br />
-
-<input type="submit" value="Log in" />
-<input type="hidden" name="redirect" value="{{ redirect|default_if_none:'/' }}" />
+	Name:<br/><input name="name" /><br/>
+	Password:<br/><input name="password" type="password" /><br/>
+	<input type="submit" value="Sign In" />
+	<input type="hidden" name="redirect" value="{{ redirect|default_if_none:'/' }}" />
 </form>
+
+
