@@ -1,4 +1,4 @@
--module(post, [Id, PostText, PersonId]).
+-module(post, [Id, PostText, PersonId, CreationTime]).
 -compile(export_all).
 -belongs_to(person).
 

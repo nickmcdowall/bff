@@ -13,7 +13,7 @@
 		<ul>
 			{% if person.posts %} 
 				{% for post in person.posts %}
-					<li>{{ post.post_text }} </li>
+					<li>[{{post.creation_time|date:"d-m-y G:i"}}] {{ post.post_text }} </li>
 				{% endfor %} 
 			{% endif %}
 		</ul>

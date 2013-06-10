@@ -11,7 +11,7 @@ load(Name) ->
 	Person = person:new(id, Name, user_lib:hash_for(Name, Name)),
 	case Person:save() of
 		{ok, SavedPerson} ->
-			Post = post:new(id, Name ++ " is my name!", SavedPerson:id()),
+			Post = post:new(id, Name ++ " is my name!", SavedPerson:id(), erlang:now()),
 			Post:save(),
 			ok;
 		{error,[Reason]} -> 

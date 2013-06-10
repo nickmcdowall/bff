@@ -8,7 +8,7 @@ create('GET', [], Person) ->
 	ok;
 create('POST', [], Person) ->
 	PostText = Req:post_param("post_text"),
-	NewPost = post:new(id, PostText, Person:id()),
+	NewPost = post:new(id, PostText, Person:id(), erlang:now()),
 	case NewPost:save() of
 		{ok, SavedPost} -> 
 			{redirect, [{controller, "welcome"},{action, "index"}]};
