@@ -19,8 +19,8 @@ login_cookies() ->
 
 validation_tests() ->
 	[
-		{fun() -> length(Name) > 0 end, "Your name can't be empty!"},
-		{fun() -> length(Name) =< 100 end, "Your name is too long!"},
+		{fun() -> length(Name) > 0 end, "Username can't be empty!"},
+		{fun() -> length(Name) =< 100 end, "Username is too long!"},
 		{fun() -> length(PasswordHash) > 0 end, "Password can't be empty."}
 	].
 

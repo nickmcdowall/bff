@@ -1,11 +1,22 @@
-{% if error %}
-	<font color="red">{{ error }}</font>
-{% endif %}
-
-<h4>Sign Up:</h4>
-<form method="post" name="register">
-	Name:<br/><input name="name"/><br/>
-	Password:<br/><input name="password" type="password" /><br/>
-	<input type="submit" value="Sign Up" />
-	<input type="hidden" name="redirect" value="/" />
-</form>
+<html>
+	<head><title>Register</title></head>
+	<body>
+	
+		{% if error %}
+			<p class="error">{{ error }}</p>
+		{% endif %}
+		
+		<h4>Register:</h4>
+		<form method="post" name="register">
+		
+			<label>Username:</label><br/>
+			<input name="username" type="text" /><br/>
+			
+			<label>Password:</label><br/>
+			<input name="password" type="password" /><br/>
+			
+			<input type="submit" value="Sign Up" />
+			<input type="hidden" name="redirect" value="/" />
+		</form>
+	</body>
+</html>

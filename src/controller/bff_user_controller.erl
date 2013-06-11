@@ -4,17 +4,18 @@
 login('GET', []) ->
     {ok, []};
 login('POST', []) ->
-    Name = Req:post_param("name"),
+    Name = Req:post_param("username"),
+	ErrorMessage = "Invalid username/password",
     case boss_db:find(person, [{name, Name}]) of
         [Person] ->
             case Person:check_password(Req:post_param("password")) of
                 true ->
                     {redirect, "/", Person:login_cookies()};
                 false ->
-                    {ok, [{error, "Bad name/password combination"}]}
+                    {ok, [{error, ErrorMessage}]}
             end;
         [] ->
-            {ok, [{error, "No Person named " ++ Name}]}
+            {ok, [{error, ErrorMessage}]}
     end.
 
 logout('GET', []) ->
@@ -25,7 +26,7 @@ logout('GET', []) ->
 signup('GET', []) ->
     {ok, []};
 signup('POST', []) ->
-	Name = Req:post_param("name"),
+	Name = Req:post_param("username"),
 	Password = Req:post_param("password"),
 	Person = person:new(id, Name, user_lib:hash_for(Name, Password)),
 	case Person:save() of
