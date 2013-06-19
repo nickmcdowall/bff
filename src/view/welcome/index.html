@@ -1,23 +1,14 @@
-<html>
-	<head>
-		<title>{% block title %}BFF{% endblock %}</title>
-	</head>
-	<body>
-	<div><a href="/user/logout">Sign Out</a></div>
-		
-	{% block body %}
-	<h2>Welcome back {{ person.name }}</h2>
-	
-	<div>
-	<h4>Posts | <a href="post/create">New</a></h4>
-		<ul>
-			{% if person.posts %} 
-				{% for post in person.posts %}
-					<li>[{{post.creation_time|date:"d-m-y G:i"}}] {{ post.post_text }} </li>
-				{% endfor %} 
-			{% endif %}
-		</ul>
-	</div>
-	{% endblock %}
-	</body>
-</html>
+{% extends "shared/parent.html" %}
+
+{% block main_section %}
+	{% if person.posts %} 
+	<article>
+		{% for post in person.posts %}
+			<details>
+				<summary>{{ post.creation_time | date:"d-m-y G:i" }}</summary>
+				{{ post.post_text }}
+			</details>
+		{% endfor %} 
+	</article>
+	{% endif %}
+{% endblock %}

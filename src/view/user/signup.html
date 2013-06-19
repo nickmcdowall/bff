@@ -1,22 +1,24 @@
-<html>
-	<head><title>Register</title></head>
-	<body>
-	
-		{% if error %}
-			<p class="error">{{ error }}</p>
-		{% endif %}
-		
-		<h4>Register:</h4>
-		<form method="post" name="register">
-		
-			<label>Username:</label><br/>
-			<input name="username" type="text" /><br/>
-			
-			<label>Password:</label><br/>
-			<input name="password" type="password" /><br/>
-			
-			<input type="submit" value="Sign Up" />
-			<input type="hidden" name="redirect" value="/" />
-		</form>
-	</body>
-</html>
+{% extends "shared/parent.html" %}
+{% block title %}Register{% endblock %}
+
+{% block main_section %}
+	<form method="post" name="register">
+		<ul>
+			<li>
+				<h2>Register</h2>
+			</li>
+			<li>
+				<label>Username:</label>
+				<input name="username" type="text" required/><br/>
+			</li>
+			<li>
+				<label>Password:</label>
+				<input name="password" type="password" required/><br/>
+			</li>
+			<li>
+				<input type="submit" />
+				<input type="hidden" name="redirect" value="/" />
+			</li>
+		</ul>
+	</form>
+{% endblock %}

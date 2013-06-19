@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}bff{% endblock %}</title>
+		<link rel="stylesheet" href="/static/bff.css">
+	</head>
+	
+	<body>
+		{% block body %}
+			
+			<header>
+				{% block header %}
+					{% if person %} 
+						Welcome, {{ person.name }}
+					{% endif %}
+					{% if error %}
+						<p class="error">{{ error }}</p>
+					{% endif %}
+				{% endblock %}
+			</header>
+
+			<nav>
+				{% block nav %}
+					<ul>
+						{% if person %} 
+							<li><a href="/">Home</a></li>
+							<li><a href="post/create">New Post</a></li>
+							<li><a href="/user/logout">Sign Out</a></li>
+						{% else %}
+							<li><a href="/user/login">Sign In</a></li>
+							<li><a href="/user/signup">Register</a></li>
+						{% endif %}
+					</ul>
+				{% endblock %}
+			</nav>
+			
+			<section>{% block main_section %}{% endblock %}</section>
+
+			<aside>{% block aside %}{% endblock %}</aside>
+			
+			<footer>{% block footer %}{% endblock %}</footer>
+			
+		{% endblock%}
+	</body>
+</html>

@@ -13,7 +13,7 @@ start() ->
 					], [
 						"Login with unregistered user",
 						fun(Response2a) -> boss_web_test:submit_form("login", 
-							[{"Username", "clive"}, {"Password", "abc"}], Response2a, 
+							[{"Username:", "clive"}, {"Password:", "abc"}], Response2a, 
 							[
 							 	fun boss_assert:http_ok/1,
 								fun(Response2a) -> boss_assert:tag_with_text("p", "Invalid username/password", Response2a) end

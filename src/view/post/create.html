@@ -1,26 +1,21 @@
+{% extends "shared/parent.html" %}
+{% block title %}New Post{% endblock %}
 
-<html>
-	<head>
-		<title>{% block title %}New Post{% endblock %}</title>
-	</head>
-	<body>
-	{% block body %}
-		<h2>New post</h2>
-		{% if errors %}
-			<ul>
-			 {% for error in errors %}
-			 	<li><font color=red>{{ error }}</font></li>
-			 {% endfor %}
-			</ul>
-		{% endif %}
-		
-		<form method="post">
-			Enter message here:
-			<textarea name="post_text">{% if new_msg %}{{ new_msg.post_text }}{% endif %}</textarea>
-			<input type="submit">
-		</form>
-		
-	{% endblock %}
-	</body>
-
-</html>
+{% block main_section %}
+	<form method="post">
+		<ul>
+			<li>
+				<h2>New Post</h2>
+			</li>		
+			<li>
+				<label>Message:</label>
+				<textarea name="post_text" cols="40" rows="6">
+					{% if new_msg %}{{ new_msg.post_text }}{% endif %}
+				</textarea>
+			</li>		
+			<li>
+				<input type="submit">
+			</li>		
+		</ul>
+	</form>
+{% endblock %}
